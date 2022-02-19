@@ -80,7 +80,7 @@ export default function App() {
         >
           <FullscreenIcon />
         </IconButton>
-        <iframe src="" id="container" style={{
+        <iframe title="Game Frame" src="" id="container" style={{
           position: 'absolute',
           left: '50%',
           top: '50%',
