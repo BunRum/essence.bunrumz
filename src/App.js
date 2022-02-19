@@ -1,8 +1,8 @@
 import React from "react";
-//import Button from "@mui/material/Button";
 import ButtonUnstyled, { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
 import { styled } from '@mui/system';
-
+import IconButton from '@mui/material/IconButton';
+import FullscreenIcon from '@mui/icons-material/Fullscreen';
 const blue = {
   500: '#007FFF',
   600: '#0072E5',
@@ -39,40 +39,7 @@ const CustomButtonRoot = styled('button')`
     cursor: not-allowed;
   }
 `;
-// function SetBackgroundColor() {
-//   return (
-//     <div
-//       style={{
-//         backgroundColor: 'rgb(19, 16, 16)',
-//         width: '100vw',
-//         height: '100vh'
-//       }}
-//     />
-//   );
-// }
 
-const mystyle = {
-  backgroundColor: "rgb(19, 16, 16)",
-  width: '100vw',
-  height: '100vh'
-};
-
-const box = {
-  position: 'absolute',
-  left: '50%',
-  top: '50%',
-  transform: 'translate(-50%, -50%)',
-  backgroundColor: "rgb(0,0,0)",
-  width: '40%',
-  height: '50%'
-};
-
-const style = {
-  position: 'absolute',
-  left: '50%',
-  top: '50%',
-  transform: 'translate(-50%, 500%)'
-};
 
 function CustomButton(props) {
   return <ButtonUnstyled {...props} component={CustomButtonRoot} />;
@@ -80,12 +47,61 @@ function CustomButton(props) {
 
 export default function App() {
   return (
-    <div style={mystyle}>
-      <div style={box}></div>
-
-      <CustomButton style={style}>Button</CustomButton>
-      {/* <Button variant="contained" style={style}>Contained</Button> */}
+    <div style={{
+      backgroundColor: "rgb(19, 16, 16)",
+      width: '100vw',
+      height: '100vh'
+    }}>
+      <div style={{
+        position: 'absolute',
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%, -50%)',
+        backgroundColor: "rgb(0,0,0)",
+        width: '40%',
+        height: '50%'
+      }}>
+        <IconButton color="primary" style={{
+          position: 'absolute',
+          left: '50%',
+          top: '50%',
+          transform: 'translate(700%, -550%)'
+        }}
+          onClick={() => {
+            let elem = document.getElementById("container");
+            if (!document.fullscreenElement) {
+              elem.requestFullscreen().catch(err => {
+                alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+              });
+            } else {
+              document.exitFullscreen();
+            }
+          }}
+        >
+          <FullscreenIcon />
+        </IconButton>
+        <iframe src="" id="container" style={{
+          position: 'absolute',
+          left: '50%',
+          top: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: '100%',
+          height: '100%'
+        }} allow="fullscreen"></iframe>
+      </div>
+      <CustomButton style={{
+        position: 'absolute',
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%, 500%)'
+      }}
+        onClick={() => {
+          document.getElementById("container").setAttribute("src", "https://bunrum.github.io/JavaScriptGames/Portal2d.html");
+        }}
+      >
+        Super Smash Flash
+      </CustomButton>
     </div>
-    
+
   );
 };
