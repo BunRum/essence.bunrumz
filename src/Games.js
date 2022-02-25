@@ -53,6 +53,10 @@ const list = [
         title: 'Riddle Transfer 2',
         img: '/images/rt2.jpg'
     },
+    {
+        title: 'Spider-Man (2000)',
+        img: '/images/sm2000.jpg'
+    },
 ];
 
 export default function Games() {
