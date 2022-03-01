@@ -1,5 +1,5 @@
 import React from "react";
-import { NextUIProvider, createTheme, Button, Modal, Input, Text, Row, Checkbox} from "@nextui-org/react";
+import { NextUIProvider, createTheme, Button, Modal, Text, Card, Grid, Col } from "@nextui-org/react";
 
 const darkTheme = createTheme({
     type: 'dark'
@@ -19,11 +19,14 @@ export default function Test() {
             </Button>
             <Modal
                 closeButton
+                scroll
                 aria-labelledby="modal-title"
+                aria-describedby="modal-description"
                 width="600px"
                 height="1000px"
                 open={visible}
                 onClose={closeHandler}
+                fullScreen
             >
                 <Modal.Header>
                     <Text id="modal-title" size={18}>
@@ -34,39 +37,40 @@ export default function Test() {
                     </Text>
                 </Modal.Header>
                 <Modal.Body>
-                    <Input
-                        clearable
-                        bordered
-                        fullWidth
-                        color="primary"
-                        size="lg"
-                        placeholder="Email"
-                    />
-                    <Input
-                        clearable
-                        bordered
-                        fullWidth
-                        color="primary"
-                        size="lg"
-                        placeholder="Password"
-                    />
-                    <Row justify="space-between">
-                        <Checkbox>
-                            <Text size={14}>
-                                Remember me
-                            </Text>
-                        </Checkbox>
-                        <Text size={14}>
-                            Forgot password?
+                    <Grid.Container gap={2} justify="center">
+                        <Grid xs={1} sm={3}>
+                            <Card bordered css={{mw: "100px"}}>
+                                <Card.Body css={{ p: 0 }}>
+                                    <Card.Image
+                                        objectFit="cover"
+                                        src='/images/sm2000.jpg'
+
+                                        height={100}
+                                        width={100}
+                                        alt="Card image background"
+
+                                    />
+                                </Card.Body>
+                            </Card>
+                        </Grid>
+                    </Grid.Container>
+                    <Col>
+                        <Text
+                            size={12}
+                            weight="bold" x
+                            transform="uppercase"
+                            color="#ffffffAA"
+                        >
+                            Description
                         </Text>
-                    </Row>
+                        <Text h4 color="white">
+                            Stream the Acme event
+                        </Text>
+                    </Col>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button auto flat color="error" onClick={closeHandler}>
                         Close
-                    </Button>
-                    <Button auto onClick={closeHandler}>
-                        Sign in
                     </Button>
                 </Modal.Footer>
             </Modal>

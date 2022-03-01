@@ -3,6 +3,7 @@ import React from 'react';
 import { Button, Grid, Text, Card, Row, createTheme, NextUIProvider, Input, Spacer } from "@nextui-org/react";
 import { Col } from '@nextui-org/react';
 import { useNavigate } from 'react-router-dom';
+import { Play } from 'react-iconly';
 
 const darkTheme = createTheme({
     type: 'dark'
@@ -59,55 +60,131 @@ const list = [
     },
 ];
 
+
+var request = new XMLHttpRequest();
+request.open("GET", "./ListOFGames.json", false);
+request.send(null)
+var GameList = JSON.parse(request.responseText)
+console.log(GameList[0])
+
 export default function Games() {
     const navigate = useNavigate();
     return (
         <NextUIProvider theme={darkTheme}>
-            <Input
-                css={{
-                    zIndex: "1",
-                    position: "absolute",
-                    left: "50%",
-                    transform: "translate(320%, -100%)",
-                }}
-                clearable label="Search" placeholder="  " initialValue=""
-            />
-            
-            <Spacer y={3.7} />
-            <Grid.Container gap={2} justify="flex-start">
-                {list.map((item, index) => (
-                    <Grid xs={6} sm={3} key={index}>
-                        <Card hoverable animated shadow>
-                            <Card.Body css={{ p: 0 }}>
-                                <Card.Image
-                                    objectFit="cover"
-                                    src={item.img}
-                                    width='100%'
-                                    height={140}
-                                    alt={item.title}
-                                />
-                            </Card.Body>
-                            <Card.Footer justify="flex-end" blur="true">
-                                <Row wrap='wrap' justify="space-between">
-                                    <Text b>
-                                        {item.title}
+            <Grid.Container justify="center" id="NewItem">
+                <Grid sm="100%">
+                    <Card cover css={{ w: '100%', p: 0 }}>
+                        <Card.Header css={{ position: 'absolute', zIndex: 1, top: 50 }}>
+                            <div>
+                                <Col>
+                                    <Text
+                                        h1
+                                        size={60}
+                                        css={{
+                                            "color": "white",
+                                            "-webkit-text-stroke-width": "3px",
+                                            "-webkit-text-stroke-color": "black"
+                                        }}
+                                        weight="bold"
+                                    >
+                                        Super Mario 64
                                     </Text>
-                                </Row>
-                                <Row>
-                                    <Col>
-                                        <Row justify="flex-end">
-                                            <Button flat auto rounded color="success" onClick={() => {navigate("../Player?game=" + item.title)}}>
-                                                <Text css={{ color: 'inherit' }} size={12} weight="bold" transform="uppercase">
-                                                    Play
-                                                </Text>
-                                            </Button>
-                                        </Row>
-                                    </Col>
-                                </Row>
-                            </Card.Footer>
-                        </Card>
-                    </Grid>
-                ))
+                                    <Button auto css={{ color: '#94f9f0', bg: '#000000' }}>
+                                        {<Play fill="currentColor" filled />}
+                                        <Spacer x={0.2} />
+                                        Play
+                                    </Button>
+                                </Col>
+                            </div>
+                        </Card.Header>
+                        <Card.Body>
+                            <Card.Image
+                                src='/images/sm64cover.jpg'
+                                height={400}
+                                width="100%"
+                                alt="Relaxing app background"
+                                objectFit='Fill'
+                            />
+                        </Card.Body>
+                        <Card.Footer
+                            blur
+                            css={{
+                                position: 'absolute',
+                                bgBlur: '#0f1114',
+                                borderTop: '$borderWeights$light solid $gray700',
+                                bottom: 0,
+                                zIndex: 1
+                            }}
+                        >
+                            <Row>
+                                <Col>
+                                    <Row>
+                                        <Col span={3}>
+                                            <Card.Image
+                                                src='/images/sm64cover.jpg'
+                                                css={{ background: 'black' }}
+                                                height={40}
+                                                width={40}
+                                                alt="Breathing app icon"
+                                                objectFit='fill'
+                                            />
+                                        </Col>
+                                        <Col>
+                                            <Text color="#d1d1d1" size={12}>
+                                                Breathing App
+                                            </Text>
+                                            <Text color="#d1d1d1" size={12}>
+                                                Get a good night's sleep.
+                                            </Text>
+                                        </Col>
+                                    </Row>
+                                </Col>
+                                <Col>
+                                    <Row justify="flex-end">
+                                    </Row>
+                                </Col>
+                            </Row>
+                        </Card.Footer>
+                    </Card>
+                </Grid>
+            </Grid.Container>
+            <Spacer y={1} />
+            <Grid.Container gap={2} justify="flex-start">
+                {
+                    Object.entries(GameList).map(([Game], i) => (
+                        console.log(Game, GameList[Game]),
+                        <Grid xs={6} sm={3} key={i}>
+                            <Card hoverable animated shadow>
+                                <Card.Body css={{ p: 0 }}>
+                                    <Card.Image
+                                        objectFit="cover"
+                                        src={GameList[Game]["CoverArt"]}
+                                        width='100%'
+                                        height={140}
+                                        alt={GameList[Game]["CoverArt"]}
+                                    />
+                                </Card.Body>
+                                <Card.Footer justify="flex-end" blur="true">
+                                    <Row wrap='wrap' justify="space-between">
+                                        <Text b>
+                                            {Game}
+                                        </Text>
+                                    </Row>
+                                    <Row>
+                                        <Col>
+                                            <Row justify="flex-end">
+                                                <Button flat auto rounded color="success" onClick={() => { navigate("../Player?game=" + Game) }}>
+                                                    <Text css={{ color: 'inherit' }} size={12} weight="bold" transform="uppercase">
+                                                        Play
+                                                    </Text>
+                                                </Button>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                </Card.Footer>
+                            </Card>
+                        </Grid>
+                    ))
                 }
             </Grid.Container >
         </NextUIProvider >
