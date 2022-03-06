@@ -63,6 +63,7 @@ const darkTheme = createTheme({
 var request = new XMLHttpRequest();
 request.open("GET", "./ListOFGames.json", false);
 request.send(null)
+console.log(request.responseText);
 var GameList = JSON.parse(request.responseText)
 
 export default function Games() {
