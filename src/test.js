@@ -1,79 +1,21 @@
-import React from "react";
-import { NextUIProvider, createTheme, Button, Modal, Text, Card, Grid, Col } from "@nextui-org/react";
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-const darkTheme = createTheme({
-    type: 'dark'
-})
-
-export default function Test() {
-    const [visible, setVisible] = React.useState(false);
-    const handler = () => setVisible(true);
-    const closeHandler = () => {
-        setVisible(false);
-        console.log('closed');
-    };
-    return (
-        <NextUIProvider theme={darkTheme}>
-            <Button auto shadow onClick={handler}>
-                Open modal
-            </Button>
-            <Modal
-                closeButton
-                scroll
-                aria-labelledby="modal-title"
-                aria-describedby="modal-description"
-                width="600px"
-                height="1000px"
-                open={visible}
-                onClose={closeHandler}
-                fullScreen
-            >
-                <Modal.Header>
-                    <Text id="modal-title" size={18}>
-                        Welcome to
-                        <Text b size={18}>
-                            NextUI
-                        </Text>
-                    </Text>
-                </Modal.Header>
-                <Modal.Body>
-                    <Grid.Container gap={2} justify="center">
-                        <Grid xs={1} sm={3}>
-                            <Card bordered css={{mw: "100px"}}>
-                                <Card.Body css={{ p: 0 }}>
-                                    <Card.Image
-                                        objectFit="cover"
-                                        src='/images/sm2000.jpg'
-
-                                        height={100}
-                                        width={100}
-                                        alt="Card image background"
-
-                                    />
-                                </Card.Body>
-                            </Card>
-                        </Grid>
-                    </Grid.Container>
-                    <Col>
-                        <Text
-                            size={12}
-                            weight="bold" x
-                            transform="uppercase"
-                            color="#ffffffAA"
-                        >
-                            Description
-                        </Text>
-                        <Text h4 color="white">
-                            Stream the Acme event
-                        </Text>
-                    </Col>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button auto flat color="error" onClick={closeHandler}>
-                        Close
-                    </Button>
-                </Modal.Footer>
-            </Modal>
-        </NextUIProvider>
-    );
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyChC3gM5Z6JtGFctfl3SVfB-9L3y7jDP0Q",
+  authDomain: "chat-for-essence.firebaseapp.com",
+  projectId: "chat-for-essence",
+  storageBucket: "chat-for-essence.appspot.com",
+  messagingSenderId: "626018798700",
+  appId: "1:626018798700:web:1b957132189cfc9b435c49",
+  measurementId: "G-RJQFT2253S"
 };
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
