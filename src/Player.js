@@ -1,6 +1,5 @@
 
 import { useSearchParams } from "react-router-dom";
-import useScript from './useScript';
 import { NextUIProvider, createTheme, Text } from '@nextui-org/react'
 
 const darkTheme = createTheme({

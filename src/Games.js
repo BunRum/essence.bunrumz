@@ -59,15 +59,18 @@ const darkTheme = createTheme({
 //     },
 // ];
 
-
 var request = new XMLHttpRequest();
 request.open("GET", "./ListOFGames.json", false);
 request.send(null)
-console.log(request.responseText);
 var GameList = JSON.parse(request.responseText)
 
 export default function Games() {
     const navigate = useNavigate();
+
+    function stuff() {
+    }
+    stuff()
+
     return (
         <NextUIProvider theme={darkTheme}>
             <Grid.Container justify="center" id="NewItem">
@@ -76,7 +79,7 @@ export default function Games() {
                         <Card.Body>
                             <Card.Image
                                 src='/images/sm64gameplay2.jpg'
-                                height={400}
+                                height={300}
                                 width="100%"
                                 alt="Relaxing app background"
                             />
@@ -99,7 +102,7 @@ export default function Games() {
                                             <Text color="#d1d1d1" size={12}>
                                                 Recently Added
                                             </Text>
-                                            <Spacer y={.4}/>
+                                            <Spacer y={.4} />
                                             <Text color="#d1d1d1" size={16}>
                                                 Super Mario 64
                                             </Text>
@@ -160,11 +163,11 @@ export default function Games() {
             <Grid.Container gap={2} justify="flex-start">
                 {
                     Object.entries(GameList).map(([Game], i) => (
-                        <Grid xs={9} sm={3} key={i}>
+                        <Grid xs={1} sm={2.4} key={i}>
                             <Card hoverable animated shadow>
                                 <Card.Body css={{ p: 0 }}>
                                     <Card.Image
-                                        objectFit="cover"
+                                        objectFit="scale-down"
                                         src={GameList[Game]["CoverArt"]}
                                         width='100%'
                                         height={140}
