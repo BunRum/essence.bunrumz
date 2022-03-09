@@ -1,0 +1,17 @@
+{
+    "Fortnite": {
+        "CoverArt": "./images/fortnite.jpg"
+    },
+    "Yakuza Kiwami": {
+        "CoverArt": "./images/kiwami.jpg"
+    },
+    "Riddle School": {
+        "CoverArt": "./images/rs1.jpg"
+    },
+    "Riddle School 2": {
+        "CoverArt": "./images/rs2.png"
+    },
+    "Super Mario 64": {
+        "CoverArt": "./images/sm64gameplay.jpg"
+    }
+}
