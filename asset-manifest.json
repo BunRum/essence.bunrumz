@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/essence.bunrumz/static/js/main.b43301c4.chunk.js",
-    "main.js.map": "/essence.bunrumz/static/js/main.b43301c4.chunk.js.map",
+    "main.js": "/essence.bunrumz/static/js/main.c5241145.chunk.js",
+    "main.js.map": "/essence.bunrumz/static/js/main.c5241145.chunk.js.map",
     "runtime-main.js": "/essence.bunrumz/static/js/runtime-main.89810ee3.js",
     "runtime-main.js.map": "/essence.bunrumz/static/js/runtime-main.89810ee3.js.map",
     "static/js/2.0a3b1c0e.chunk.js": "/essence.bunrumz/static/js/2.0a3b1c0e.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.89810ee3.js",
     "static/js/2.0a3b1c0e.chunk.js",
-    "static/js/main.b43301c4.chunk.js"
+    "static/js/main.c5241145.chunk.js"
   ]
 }
