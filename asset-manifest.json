@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/essence.bunrumz/static/js/main.d85d2b43.chunk.js",
-    "main.js.map": "/essence.bunrumz/static/js/main.d85d2b43.chunk.js.map",
+    "main.js": "/essence.bunrumz/static/js/main.c5f9ace2.chunk.js",
+    "main.js.map": "/essence.bunrumz/static/js/main.c5f9ace2.chunk.js.map",
     "runtime-main.js": "/essence.bunrumz/static/js/runtime-main.89810ee3.js",
     "runtime-main.js.map": "/essence.bunrumz/static/js/runtime-main.89810ee3.js.map",
-    "static/js/2.09a44443.chunk.js": "/essence.bunrumz/static/js/2.09a44443.chunk.js",
-    "static/js/2.09a44443.chunk.js.map": "/essence.bunrumz/static/js/2.09a44443.chunk.js.map",
+    "static/js/2.f823009c.chunk.js": "/essence.bunrumz/static/js/2.f823009c.chunk.js",
+    "static/js/2.f823009c.chunk.js.map": "/essence.bunrumz/static/js/2.f823009c.chunk.js.map",
     "index.html": "/essence.bunrumz/index.html",
-    "static/js/2.09a44443.chunk.js.LICENSE.txt": "/essence.bunrumz/static/js/2.09a44443.chunk.js.LICENSE.txt"
+    "static/js/2.f823009c.chunk.js.LICENSE.txt": "/essence.bunrumz/static/js/2.f823009c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.89810ee3.js",
-    "static/js/2.09a44443.chunk.js",
-    "static/js/main.d85d2b43.chunk.js"
+    "static/js/2.f823009c.chunk.js",
+    "static/js/main.c5f9ace2.chunk.js"
   ]
 }
