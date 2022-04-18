@@ -12,10 +12,10 @@ const Navbar = () => {
     <>
       <Nav>
         <NavMenu>
-          <NavLink to="/">
+          <NavLink to="/essence.bunrumz">
             Games
           </NavLink>
-          <NavLink to="/Player">
+          <NavLink to="/essence.bunrumz/Player">
             Player
           </NavLink>
           {/* <Input

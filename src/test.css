@@ -1,0 +1,6 @@
+body{
+    background: url(/sitefiles/bg0.webp);
+    background-size:contain;
+    background-position:top;
+    background: cover;
+}

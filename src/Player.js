@@ -42,12 +42,13 @@ var dict = {
 };
 
 var request = new XMLHttpRequest();
-request.open("GET", "./ListOFGames.json", false);
+request.open("GET", "/essence.bunrumz/ListOfGames.json", false);
 request.send(null)
 var GameList = JSON.parse(request.responseText)
 
 function CheckifGameExists(game) {
-    if (GameList[game] === undefined && dict[game] === undefined) {
+
+    if (GameList[game] === undefined) {
         return (
             <NextUIProvider theme={darkTheme}>
                 <Text h1
@@ -58,27 +59,29 @@ function CheckifGameExists(game) {
             </NextUIProvider>
         )
     }
-    if (GameList[game] !== undefined && dict[game] !== undefined) {
+    if (GameList[game] !== undefined) {
         return (
             <div>
-                {dict[game]()}
+                <iframe title="wip" id="container" style={{
+                    display: "block",   /* iframes are inline by default */
+                    position: "fixed",
+                    background: "#000",
+                    border: "none",
+                    top: "0", right: "0",
+                    bottom: "0", left: "0",
+                    width: '100vw',
+                    height: '100vh',
+                    overflow: "hidden"
+                }} src={`/essence.bunrumz/gamefiles/${game}/game.html`}>
+                </iframe>
             </div>
-        )
-    }
-    if (dict[game] === undefined && GameList[game] !== undefined) {
-        return (
-            <NextUIProvider theme={darkTheme}>
-                <Text h1
-                    style={{
-                        position: 'absolute', left: '50%', top: '50%',
-                        transform: 'translate(-50%, 170%)'
-                    }}> This game exists but there is no code for it </Text>
-            </NextUIProvider>
         )
     }
 }
 
 export default function Player() {
+    // const location = useLocation();
+    console.log("a")
     let [searchParams] = useSearchParams();
     let game = searchParams.get("game")
     document.body.style.margin = "0";

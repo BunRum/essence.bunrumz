@@ -1,17 +1,17 @@
 {
-    "Fortnite": {
-        "CoverArt": "./images/fortnite.jpg"
+    "Marvel Vs Capcom 2": {
+        "CoverArt": "/essence.bunrumz/gamefiles/Marvel Vs Capcom 2/cover.png"
     },
-    "Yakuza Kiwami": {
-        "CoverArt": "./images/kiwami.jpg"
+    "God of War": {
+        "CoverArt": "/essence.bunrumz/gamefiles/God of War/cover.png"
     },
     "Riddle School": {
-        "CoverArt": "./images/rs1.jpg"
+        "CoverArt": "/essence.bunrumz/images/rs1.jpg"
     },
     "Riddle School 2": {
-        "CoverArt": "./images/rs2.png"
+        "CoverArt": "/essence.bunrumz/images/rs2.png"
     },
     "Super Mario 64": {
-        "CoverArt": "./images/sm64gameplay.jpg"
+        "CoverArt": "/essence.bunrumz/gamefiles/Super Mario 64/cover.png"
     }
 }
