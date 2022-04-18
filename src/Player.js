@@ -6,40 +6,40 @@ const darkTheme = createTheme({
     type: 'dark'
 })
 
-var dict = {
-    "Riddle School": function () {
-        return (
-            <iframe title="wip" id="container" style={{
-                display: "block",   /* iframes are inline by default */
-                position: "fixed",
-                background: "#000",
-                border: "none",
-                top: "0", right: "0",
-                bottom: "0", left: "0",
-                width: '100vw',
-                height: '100vh',
-                overflow: "hidden"
-            }} src="https://bunrum.github.io/webgames/Riddle School">
-            </iframe>
-        )
-    },
-    "Super Mario 64": function () {
-        return (
-            <iframe title="wip" id="container" style={{
-                display: "block",   /* iframes are inline by default */
-                position: "fixed",
-                background: "#000",
-                border: "none",
-                top: "0", right: "0",
-                bottom: "0", left: "0",
-                width: '100vw',
-                height: '100vh',
-                overflow: "hidden"
-            }} src="https://sm64web.clambam10.repl.co/f.html">
-            </iframe>
-        )
-    }
-};
+// var dict = {
+//     "Riddle School": function () {
+//         return (
+//             <iframe title="wip" id="container" style={{
+//                 display: "block",   /* iframes are inline by default */
+//                 position: "fixed",
+//                 background: "#000",
+//                 border: "none",
+//                 top: "0", right: "0",
+//                 bottom: "0", left: "0",
+//                 width: '100vw',
+//                 height: '100vh',
+//                 overflow: "hidden"
+//             }} src="https://bunrum.github.io/webgames/Riddle School">
+//             </iframe>
+//         )
+//     },
+//     "Super Mario 64": function () {
+//         return (
+//             <iframe title="wip" id="container" style={{
+//                 display: "block",   /* iframes are inline by default */
+//                 position: "fixed",
+//                 background: "#000",
+//                 border: "none",
+//                 top: "0", right: "0",
+//                 bottom: "0", left: "0",
+//                 width: '100vw',
+//                 height: '100vh',
+//                 overflow: "hidden"
+//             }} src="https://sm64web.clambam10.repl.co/f.html">
+//             </iframe>
+//         )
+//     }
+// };
 
 var request = new XMLHttpRequest();
 request.open("GET", "/essence.bunrumz/ListOfGames.json", false);

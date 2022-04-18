@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Routes, Route, useRoutes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import { Navigate } from "react-router-dom";
 // import { Redirect } from 'react-router-dom';
 import Games from './Games';
