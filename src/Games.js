@@ -142,7 +142,7 @@ export default function Games() {
                     }
                 }
                 onClick={() => {
-                    navigate(`/essence.bunrumz/Riddle School Series`)
+                    navigate(`/essence.bunrumz/RiddleSchool`)
                 }}
                 css={{
                     boxShadow: '$md',
@@ -158,15 +158,15 @@ export default function Games() {
                 }}
             />
             <Spacer y={3} />
-            <Grid.Container gap={1} justify="center">
+            <Grid.Container gap={0.4} justify="center">
                 {
                     Object.entries(GameList).map(([Game], i) => (
-                        <Grid xs={1.3} key={i}>
+                        <Grid xs={1.2} key={i}>
                             <Image
                                 id={i}
                                 width='190'
-                                height='104'
-                                src={GameList[Game]["CoverArt"]}
+                                height='90'
+                                src={`/essence.bunrumz/gamefiles/${Game}/cover.png`}
                                 alt="Default Image"
                                 objectFit="cover"
                                 onMouseEnter={

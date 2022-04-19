@@ -27,7 +27,7 @@ ReactDOM.render(
     }} /> */}
     <Routes>
       <Route id="Games" path="essence.bunrumz" exact element={<Games />} />
-      <Route id="rss" path="essence.bunrumz/Riddle School Series" exact element={<Riddleschoolseries />} />
+      <Route id="rss" path="essence.bunrumz/RiddleSchool" exact element={<Riddleschoolseries />} />
       <Route id="Player" path='/essence.bunrumz/Player' exact element={<Player />} />
       <Route id="404" path="*" element={<NotFoundPage />} />
       <Route id="Test" path="essence.bunrumz/test" exact element={<App />} />
