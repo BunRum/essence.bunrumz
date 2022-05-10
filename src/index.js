@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { MemoryRouter, Routes, Route } from 'react-router-dom';
 // import { Navigate } from "react-router-dom";
 // import { Redirect } from 'react-router-dom';
 import Games from './Games';
@@ -20,7 +20,7 @@ const rootElement = document.getElementById("root");
 // ]);
 
 ReactDOM.render(
-  <Router>
+  <MemoryRouter>
     {/* <Navbar css={{
       "position": "sticky",
       "top": "0"
@@ -29,10 +29,9 @@ ReactDOM.render(
       <Route id="Games" path="essence.bunrumz" exact element={<Games />} />
       <Route id="rss" path="essence.bunrumz/RiddleSchool" exact element={<Riddleschoolseries />} />
       <Route id="Player" path='/essence.bunrumz/Player' exact element={<Player />} />
-      <Route id="404" path="*" element={<NotFoundPage />} />
       <Route id="Test" path="essence.bunrumz/test" exact element={<App />} />
       {/* <Redirect to="/404" />  */}
     </Routes>
-  </Router>,
+  </MemoryRouter>,
   rootElement
 );
