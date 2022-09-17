@@ -5,9 +5,9 @@ import { MemoryRouter, Routes, Route } from 'react-router-dom';
 // import { Redirect } from 'react-router-dom';
 import Games from './Games';
 import Player from './Player';
-// import Navbar from './Navbar';
-import NotFoundPage from "./404";
-import App from "./test";
+import Navbar from './Navbar';
+// import NotFoundPage from "./404";
+// import App from "./test";
 import Riddleschoolseries from "./Rss";
 // import { Redirect } from 'react-router'
 
@@ -21,15 +21,15 @@ const rootElement = document.getElementById("root");
 
 ReactDOM.render(
   <MemoryRouter>
-    {/* <Navbar css={{
+    <Navbar css={{
       "position": "sticky",
       "top": "0"
-    }} /> */}
+    }} />
     <Routes>
-      <Route id="Games" path="essence.bunrumz" exact element={<Games />} />
+      <Route id="Games" path="/" exact element={<Games />} />
       <Route id="rss" path="essence.bunrumz/RiddleSchool" exact element={<Riddleschoolseries />} />
       <Route id="Player" path='/essence.bunrumz/Player' exact element={<Player />} />
-      <Route id="Test" path="essence.bunrumz/test" exact element={<App />} />
+      {/* <Route id="Test" path="essence.bunrumz/test" exact element={<App />} /> */}
       {/* <Redirect to="/404" />  */}
     </Routes>
   </MemoryRouter>,
